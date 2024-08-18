@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Webpage</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body, html {
+            margin: 0;
+            padding: 1%;
+            font-family: 'Inter', sans-serif;
+        }
+        .banner-container {
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+        }
+        .banner {
+            width: 100%;
+            height: 100%;
+            background-image: url('Final_Ballpit.jpg');
+            background-size: cover;
+            background-position: center;
+            transform: scale(1.1);
+            transform-origin: center;
+        }
+        .nav-buttons {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 10;
+        }
+        .nav-button {
+            background-color: rgba(0, 0, 0, 0.1);
+            border: none;
+            padding: 10px 15px;
+            margin-left: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-weight: 500;
+            text-decoration: none;
+            color: black;
+        }
+        .nav-button:hover {
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+        }
+        .bio-photo {
+            position: absolute;
+            right: -150px;
+            top: -75px;
+            width: 150px;
+            height: 150px;
+            border-radius: 45%;
+            object-fit: cover;
+            object-position: top;
+            transform: scale(1.1);
+            border: 3px solid white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .burger-menu {
+            display: none;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 20;
+            background-color: rgba(255, 255, 255, 0.7);
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .burger-icon {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: black;
+            margin: 5px 0;
+        }
+        .mobile-nav {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 5px;
+            padding: 10px;
+            z-index: 15;
+        }
+        .mobile-nav a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: black;
+        }
+        h1 {
+            font-weight: 750;
+        }
+        
+        p {
+            font-weight: 450;
+            line-height: 1.5;
+        }
+        @media (max-width: 768px) {
+            .nav-buttons {
+                display: none;
+            }
+            .burger-menu {
+                display: block;
+            }
+            .bio-photo {
+                position: static;
+                display: block;
+                margin: 20px auto;
+            }
+            h1 {
+                font-weight: 750;
+            }
+            
+            p {
+                font-weight: 500;
+                line-height: 1.6;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="banner-container">
+        <div class="banner"></div>
+        <div class="nav-buttons">
+            <a href="page1.html" class="nav-button">Page 1</a>
+            <a href="page2.html" class="nav-button">Page 2</a>
+            <a href="art.html" class="nav-button"> Art</a>
+        </div>
+        <button class="burger-menu" onclick="toggleMobileNav()">
+            <span class="burger-icon"></span>
+            <span class="burger-icon"></span>
+            <span class="burger-icon"></span>
+        </button>
+        <div class="mobile-nav" id="mobileNav">
+            <a href="page1.html">Page 1</a>
+            <a href="page2.html">Page 2</a>
+            <a href="art.html">  Art </a>
+        </div>
+    </div>
+    <div class="content">
+        <img src="Ameer_portrait_crop2.jpg" alt="Bio Photo" class="bio-photo">
+        <h1>Welcome to My Personal Webpage</h1>
+        <p>I am a doctoral candidate in the department of Chemical and Materials Engineering. 
+            My research integrates an experimental and computational approach to develop lithium-sulfur battery (LSB) cathodes. 
+            LSBs are a promising next-generation energy storage technology, offering significantly higher capacity, lower cost, 
+            and improved environmental sustainability compared to conventional lithium-ion batteries. 
+            By leveraging computational chemistry and artificial intelligence, 
+            I aim to synthesize novel materials for enhancing the cathode interface. 
+            My doctoral research is generously funded by the 
+            NSERC PGS-D scholarship and Concordia (Doctoral Split Fellowship and Professor Hugh McQueen Award of Excellence).</p>
+        <h2>My exctracurriculars</h2>   
+        <p> Outside of academia, I am an an active member of the Chemical Institute of Canada, Montreal section. I have regularly participated in public speaking events,
+            such as Concordia's 3MT competition or AQPER. I enjoy promoting sustainable energy and storage solutions.
+            Recently, I have co-founded an AI cluster for materials and molecules under Concordia's Applied
+            AI institute. We hope to bring the knowledge and tools to the Concordia and Montreal computational chemistry community! </p>
+    </div>
+    <script>
+        function toggleMobileNav() {
+            var nav = document.getElementById("mobileNav");
+            nav.style.display = nav.style.display === "block" ? "none" : "block";
+        }
+    </script>
+</body>
+</html>

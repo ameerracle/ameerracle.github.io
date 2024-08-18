@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Artwork</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+        .nav-buttons {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 10;
+        }
+        .nav-button {
+            background-color: rgba(0, 0, 0, 0.1);
+            border: none;
+            padding: 10px 15px;
+            margin-left: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-weight: 500;
+            text-decoration: none;
+            color: black;
+        }
+        .nav-button:hover {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+        .content {
+            max-width: 800px;
+            margin: 60px auto 0;
+            padding: 20px;
+            position: relative;
+        }
+        .art-summary {
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        .artwork, .art-video {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            font-weight: 800;
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 0.5em;
+        }
+        h2 {
+            font-weight: 700;
+            color: #444;
+        }
+        p {
+            font-weight: 400;
+            line-height: 1.8;
+            color: #555;
+            font-size: 1.1em;
+        }
+        .burger-menu {
+            display: none;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 20;
+            background-color: rgba(0, 0, 0, 0.1);
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .burger-icon {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: black;
+            margin: 5px 0;
+        }
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 60px;
+            right: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 5px;
+            padding: 10px;
+            z-index: 15;
+        }
+        .mobile-nav a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: black;
+            font-weight: 500;
+        }
+        @media (max-width: 768px) {
+            .nav-buttons {
+                display: none;
+            }
+            .burger-menu {
+                display: block;
+            }
+            .content {
+                margin-top: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-buttons">
+        <a href="home.html" class="nav-button">Home</a>
+        <a href="page1.html" class="nav-button">Page 1</a>
+        <a href="page2.html" class="nav-button">Page 2</a>
+    </div>
+    <button class="burger-menu" onclick="toggleMobileNav()">
+        <span class="burger-icon"></span>
+        <span class="burger-icon"></span>
+        <span class="burger-icon"></span>
+    </button>
+    <div class="mobile-nav" id="mobileNav">
+        <a href="index.html">Home</a>
+        <a href="page1.html">Page 1</a>
+        <a href="page2.html">Page 2</a>
+        <a href="page3.html">Page 3</a>
+    </div>
+    <div class="content">
+        <h1>My Artwork</h1>
+        <div class="art-summary">
+            <h2>Harmony in a Ball Pit: A Molecular Ballet</h2>
+            <p>
+                The image represents a potential metal candidate that can improve the reliability of the lithium-sulfur battery cathode.
+                To identify the ideal coating material, the candidates are screened using computational modeling.
+                One such example is the optimized titanium nitride structure, represented by the silver and blue spheres.
+                The lithium sulfide adsorbate molecules, shown in purple and yellow, dance as energy is released and stored during the charging and discharging processes.
+                They play a key role by binding to the coating.
+                My theoretical and experimental research focuses on enhancing this interaction, which can lead to improved charging rates and increased battery capacity.
+                This multidisciplinary approach will lead batteries to become a more reliable energy storage device.
+            </p>
+        </div>
+        <img src="Final_Ballpit.jpg" alt="Harmony in a Ball Pit: A Molecular Ballet" class="artwork">
+        
+        <div class="art-summary">
+            <h2>Dynamic Molecular Animation</h2>
+            <p>
+                The above art piece was also animated to reflect the adsorption process. Notice the rotation of the adsorbates,
+                where sulfur interacts with the transition metal, and lithium interacts with the nitrogen.
+            </p>
+        </div>
+        <video controls class="art-video">
+            <source src="BallPit_Animation.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <script>
+        function toggleMobileNav() {
+            var nav = document.getElementById("mobileNav");
+            nav.style.display = nav.style.display === "block" ? "none" : "block";
+        }
+    </script>
+</body>
+</html>
